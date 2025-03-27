@@ -1,10 +1,11 @@
+{{-- filepath: c:\Users\Matlag\Desktop\programacion\universidad\Biblio-offline\resources\views\libros\biblioteca.blade.php --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Libros</title>
+    <title>Biblioteca</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
@@ -32,7 +33,7 @@
                         fill="black"
                     ></path>
                 </svg>
-                <p class="text-white text-lg font-bold">Libros</p>
+                <p class="text-white text-lg font-bold">Biblioteca</p>
             </div>
             <div class="relative flex items-center w-full max-w-lg">
                 <input 
@@ -61,33 +62,27 @@
         <!-- Título de la sección -->
         <div class="w-full mt-8 px-4">
             <div class="bg-gray-200 rounded-lg py-4 px-6">
-                <p class="text-center text-3xl font-bold">PDF de [Tema]</p>
+                <p class="text-center text-3xl font-bold">PDF de Libros</p>
             </div>
         </div>
 
         <!-- Lista de libros -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 px-4">
-            @for ($i = 0; $i < 6; $i++)
-            <a href="{{route('lector')}}"" >    
-            <div class="bg-gray-200 rounded-lg p-4 flex items-center">
-                    <div class="w-24 h-32 bg-gray-400 rounded-lg"></div>
+            @foreach ($libros as $libro)
+            <a href="{{ $libro->pdf_url }}" target="_blank">
+                <div class="bg-gray-200 rounded-lg p-4 flex items-center">
+                    <div class="w-24 h-32 bg-gray-400 rounded-lg">
+                        <img src="{{ $libro->imagen_url }}" alt="{{ $libro->titulo }}" class="w-full h-full object-cover rounded-lg">
+                    </div>
                     <div class="ml-4">
-                        <p class="text-xl font-bold">TITULO</p>
-                        <p class="text-gray-600">Descripción</p>
+                        <p class="text-xl font-bold">{{ $libro->titulo }}</p>
+                        <p class="text-gray-600">{{ $libro->descripcion }}</p>
                     </div>
                 </div>
             </a>
-            @endfor
+            @endforeach
         </div>
 
-        <!-- Paginación -->
-        <div class="flex justify-center items-center mt-8">
-            @for ($i = 1; $i <= 5; $i++)
-                <div class="w-12 h-12 flex items-center justify-center bg-gray-300 rounded-full mx-2">
-                    <p class="text-lg font-bold">{{ $i }}</p>
-                </div>
-            @endfor
-        </div>
     </div>
 </body>
 </html>
