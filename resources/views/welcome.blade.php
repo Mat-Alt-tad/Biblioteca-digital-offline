@@ -49,12 +49,17 @@
     <section class="mt-8 mx-4 p-6 bg-gray-200 rounded-lg">
         <h2 class="text-3xl font-bold text-center mb-6">{{ __('PDF por materias') }}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="{{route('lector.index')}}">
+                <div class="bg-green-600 text-white text-center py-8 rounded-lg border border-black">
+                    <p class="text-2xl">{{ __('Todos') }}</p>
+                </div>
+            </a>
             @foreach ($materias as $materia)
-                <a href="{{ route('pdf.index', ['materia' => $materia->nombre]) }}">
-                    <div class="bg-green-600 text-white text-center py-8 rounded-lg border border-black">
-                        <p class="text-2xl">{{ $materia->nombre }}</p>
-                    </div>
-                </a>
+            <a href="{{ route('lector.index', ['materia' => $materia->materia]) }}">
+                <div class="bg-green-600 text-white text-center py-8 rounded-lg border border-black">
+                    <p class="text-2xl">{{ $materia->Materia }}</p>
+                </div>
+            </a>
             @endforeach
         </div>
     </section>

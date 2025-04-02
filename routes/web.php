@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LibroApiController;
 use App\Http\Controllers\LibroController;
-use App\Http\Controllers\PdfController;
+use App\Http\Controllers\LectorController;
 use App\Models\Libro;
 // Ruta para la página de bienvenida
 Route::get('/', function () {
@@ -20,10 +20,7 @@ Route::get('/lector', function () {
 // Rutas de libros
 Route::apiResource('api/libros', LibroApiController::class);
 Route::resource('libros', LibroController::class);
-Route::group(['prefix' => 'pdf'], function () {
-    Route::get('/', [PdfController::class, 'index'])->name('pdf.index');
-    Route::get('/{id}', [PdfController::class, 'show'])->name('pdf.show');
-});
-Route::get('/csrf-token', function () {
-    return response()->json(['csrf_token' => csrf_token()]);
-});
+// Ruta para el lector
+Route::get('/lector', [LectorController::class, 'index'])->name('lector.index');
+Route::get('/lector/{id}', [LectorController::class, 'show'])->name('lector.show');
+

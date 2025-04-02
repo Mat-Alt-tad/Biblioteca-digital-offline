@@ -11,7 +11,7 @@ class LibroController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $libros = Libro::all();
         return view('libros.index', compact('libros'));
