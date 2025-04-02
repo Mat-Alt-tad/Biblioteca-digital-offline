@@ -10,7 +10,7 @@
 <!-- Lista de libros -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 px-4">
     @foreach ($libros as $libro)
-    <a href="{{ route('lector.show', $libro->id) }}" target="_blank">
+    <a href="{{ route('lector.show', $libro->id)>
         <div class="bg-gray-200 rounded-lg p-4 flex items-center">
             <div class="w-24 h-32 bg-gray-400 rounded-lg flex items-center justify-center">
                 <img src="{{ asset('storage/' . $libro->imagen_url) }}" alt="Imagen del libro" class="h-16">
