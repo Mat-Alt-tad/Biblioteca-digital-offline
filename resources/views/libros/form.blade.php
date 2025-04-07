@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-layouts.app :title="'Gestión de Libros'">
 <div class="container mx-auto mt-8">
     <h1 class="text-3xl font-bold mb-6">
         {{ isset($libro) ? __('Editar Libro') : __('Añadir Libro') }}
@@ -51,4 +49,4 @@
         </button>
     </form>
 </div>
-@endsection
+</x-layouts.app>

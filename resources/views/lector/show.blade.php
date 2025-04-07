@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<x-layouts.app :title="__('Lector')">
 <div class="container mx-auto py-8">
     <h1 class="text-3xl font-bold text-center mb-4">{{ $libro->titulo }}</h1>
     <div class="flex justify-center">
@@ -11,4 +10,4 @@
         </iframe>
     </div>
 </div>
-@endsection
+</x-layouts.app>
