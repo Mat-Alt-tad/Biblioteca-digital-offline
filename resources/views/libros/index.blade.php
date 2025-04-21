@@ -71,7 +71,7 @@
                 <button onclick="closeModal()" class="text-red-500 font-bold">&times;</button>
             </div>
             <div class="p-4 h-full">
-                <iframe id="pdfViewer" src="" class="w-full h-150"></iframe>
+                <iframe id="pdfViewer" src="" class="w-full h-115"></iframe>
             </div>
         </div>
     </div>

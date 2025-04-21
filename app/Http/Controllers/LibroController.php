@@ -35,7 +35,7 @@ class LibroController extends Controller
             'autor' => 'required',
             'descripcion' => 'required',
             'imagen_file' => 'required|image|max:2048', // Validación para la imagen
-            'pdf_file' => 'required|mimes:pdf|max:2048', // Validación para el archivo PDF
+            'pdf_file' => 'required|mimes:pdf', // Validación para el archivo PDF
             'Materia' => 'required',
         ]);
 
@@ -85,7 +85,7 @@ class LibroController extends Controller
             'autor' => 'required',
             'descripcion' => 'required',
             'imagen_file' => 'nullable|image|max:2048', // Validación para la imagen
-            'pdf_file' => 'nullable|mimes:pdf|max:2048', // Validación para el archivo PDF
+            'pdf_file' => 'nullable|mimes:pdf', // Validación para el archivo PDF
             'Materia' => 'required',
         ]);
 

@@ -43,7 +43,7 @@
             </div>
             <div class="flex items-center gap-4">
                 @auth
-                    <a href="{{ route('settings.profile') }}" class="px-4 py-2 bg-green-800 text-white rounded-lg hover:bg-green-600">
+                    <a href="{{ route('dashboard') }}" class="px-4 py-2 bg-green-800 text-white rounded-lg hover:bg-green-600">
                         {{ Auth::user()->name }}
                     </a>
                     <form method="POST" action="{{ route('logout') }}" class="inline">
@@ -53,7 +53,7 @@
                         </button>
                     </form>
                 @else
-                    <a href="{{ route('login') }}" class="px-4 py-2 bg-green-900 text-white rounded-lg hover:bg-blue-600">
+                    <a href="{{ route('login') }}" class="px-4 py-2 bg-green-900 text-white rounded-lg hover:bg-green-800">
                         {{ __('Login') }}
                     </a>
                 @endauth
