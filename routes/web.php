@@ -36,5 +36,9 @@ Route::resource('libros', LibroController::class)->middleware(['auth']);
 // Ruta para el lector
 Route::get('/lector', [LectorController::class, 'index'])->name('lector.index');
 Route::get('/lector/{id}', [LectorController::class, 'show'])->name('lector.show');
+// Ruta para csrf token
+Route::get('/csrf-token', function () {
+    return response()->json(['csrfToken' => csrf_token()]);
+})->name('csrf-token');
 
 require __DIR__.'/auth.php';
